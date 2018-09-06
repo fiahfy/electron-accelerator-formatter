@@ -1,3 +1,3 @@
-# electron-accelerator-formatter
+# @fiahfy/electron-accelerator-formatter
 
 > Format electron accelerators

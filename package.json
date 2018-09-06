@@ -1,5 +1,5 @@
 {
-  "name": "electron-accelerator-formatter",
+  "name": "@fiahfy/electron-accelerator-formatter",
   "description": "Format electron accelerators",
   "version": "0.0.1",
   "author": {
