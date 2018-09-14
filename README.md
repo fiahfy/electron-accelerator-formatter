@@ -11,5 +11,5 @@ npm install @fiahfy/electron-accelerator-formatter
 ```
 import format from '@fiahfy/electron-accelerator-formatter'
 
-console.log(format('CmdOrCtrl+A)) // '⌘A' on darwin, 'Ctrl+A' on win32
+console.log(format('CmdOrCtrl+A')) // '⌘A' on darwin, 'Ctrl+A' on win32
 ```
