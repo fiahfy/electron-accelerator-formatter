@@ -1,6 +1,6 @@
 {
   "name": "@fiahfy/electron-accelerator-formatter",
-  "description": "Format electron accelerators",
+  "description": "Format electron accelerator according to the platform",
   "version": "0.0.1",
   "author": {
     "name": "fiahfy",
@@ -27,7 +27,7 @@
     "rollup-plugin-babel": "^4.0.3"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "homepage": "https://github.com/fiahfy/electron-accelerator-formatter",
   "keywords": [
@@ -37,7 +37,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "module": "lib/index.js",
+  "module": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fiahfy/electron-accelerator-formatter.git"
@@ -45,6 +45,7 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint -f codeframe --ignore-path .gitignore .",
+    "prepare": "npm run test && npm run build",
     "test": "npm run lint && jest"
   }
 }
