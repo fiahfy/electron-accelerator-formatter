@@ -2,9 +2,9 @@ let format
 
 describe('format on darwin', () => {
   beforeAll(() => {
-    Object.defineProperty(process, 'platform', {
-      value: 'darwin'
-    })
+    global.process = {
+      platform: 'darwin'
+    }
     jest.resetModules()
     format = require('../src').default
   })
@@ -45,9 +45,9 @@ describe('format on darwin', () => {
 
 describe('format on win32', () => {
   beforeAll(() => {
-    Object.defineProperty(process, 'platform', {
-      value: 'win32'
-    })
+    global.process = {
+      platform: 'win32'
+    }
     jest.resetModules()
     format = require('../src').default
   })
