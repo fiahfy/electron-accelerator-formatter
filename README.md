@@ -8,7 +8,7 @@ npm install @fiahfy/electron-accelerator-formatter
 ```
 
 ## Usage
-```
+```js
 import format from '@fiahfy/electron-accelerator-formatter'
 
 console.log(format('CmdOrCtrl+A')) // '⌘A' on darwin, 'Ctrl+A' on win32
