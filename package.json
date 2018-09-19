@@ -27,7 +27,7 @@
     "rollup-plugin-babel": "^4.0.3"
   },
   "files": [
-    "src"
+    "dist"
   ],
   "homepage": "https://github.com/fiahfy/electron-accelerator-formatter",
   "keywords": [
@@ -36,8 +36,8 @@
     "formatter"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "module": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fiahfy/electron-accelerator-formatter.git"
@@ -47,5 +47,6 @@
     "lint": "eslint -f codeframe --ignore-path .gitignore .",
     "prepare": "npm run test && npm run build",
     "test": "npm run lint && jest"
-  }
+  },
+  "unpkg": "dist/index.umd.js"
 }
