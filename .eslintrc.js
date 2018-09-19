@@ -6,7 +6,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   env: {
-    "jest": true
+    'jest': true
   },
   extends: [
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
