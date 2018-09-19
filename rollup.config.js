@@ -1,15 +1,16 @@
 import babel from 'rollup-plugin-babel'
+import pkg from './package.json'
 
 export default {
   input: 'src/index.js',
   output: [{
-    file: 'dist/index.js',
+    file: pkg.main,
     format: 'cjs'
   }, {
-    file: 'dist/index.esm.js',
+    file: pkg.module,
     format: 'esm'
   }, {
-    file: 'dist/index.umd.js',
+    file: pkg.unpkg,
     format: 'umd',
     name: 'electronAcceleratorFormatter'
   }],
