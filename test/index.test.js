@@ -2,14 +2,12 @@ let format
 
 describe('format on darwin', () => {
   beforeAll(() => {
-    global.process = {
-      platform: 'darwin'
-    }
     jest.resetModules()
+    jest.mock('../src/platform', () => 'darwin')
     format = require('../src').default
   })
 
-  test('single key is formatted correctly', () => {
+  test('single key should be formatted correctly', () => {
     expect(format('A')).toBe('A')
     expect(format('Plus')).toBe('+')
     expect(format('Space')).toBe('Space')
@@ -28,7 +26,7 @@ describe('format on darwin', () => {
     expect(format('Esc')).toBe('⎋')
   })
 
-  test('single key with a modifier is formatted correctly', () => {
+  test('single key with a modifier should be formatted correctly', () => {
     expect(format('Ctrl+A')).toBe('⌃A')
     expect(format('Alt+A')).toBe('⌥A')
     expect(format('Shift+A')).toBe('⇧A')
@@ -36,7 +34,7 @@ describe('format on darwin', () => {
     expect(format('CmdOrCtrl+A')).toBe('⌘A')
   })
 
-  test('single key with modifiers is formatted correctly', () => {
+  test('single key with modifiers should be formatted correctly', () => {
     expect(format('Ctrl+Cmd+A')).toBe('⌃⌘A')
     expect(format('Ctrl+Alt+Cmd+A')).toBe('⌃⌥⌘A')
     expect(format('Ctrl+Alt+Shift+Cmd+A')).toBe('⌃⌥⇧⌘A')
@@ -45,14 +43,12 @@ describe('format on darwin', () => {
 
 describe('format on win32', () => {
   beforeAll(() => {
-    global.process = {
-      platform: 'win32'
-    }
     jest.resetModules()
+    jest.mock('../src/platform', () => 'win32')
     format = require('../src').default
   })
 
-  test('single key is formatted correctly', () => {
+  test('single key should be formatted correctly', () => {
     expect(format('A')).toBe('A')
     expect(format('Plus')).toBe('+')
     expect(format('Space')).toBe('Space')
@@ -71,7 +67,7 @@ describe('format on win32', () => {
     expect(format('Esc')).toBe('Esc')
   })
 
-  test('single key with a modifier is formatted correctly', () => {
+  test('single key with a modifier should be formatted correctly', () => {
     expect(format('Ctrl+A')).toBe('Ctrl+A')
     expect(format('Alt+A')).toBe('Alt+A')
     expect(format('Shift+A')).toBe('Shift+A')
@@ -79,7 +75,7 @@ describe('format on win32', () => {
     expect(format('CmdOrCtrl+A')).toBe('Ctrl+A')
   })
 
-  test('single key with modifiers is formatted correctly', () => {
+  test('single key with modifiers should be formatted correctly', () => {
     expect(format('Ctrl+A')).toBe('Ctrl+A')
     expect(format('Ctrl+Alt+A')).toBe('Ctrl+Alt+A')
     expect(format('Ctrl+Alt+Shift+A')).toBe('Ctrl+Alt+Shift+A')

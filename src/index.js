@@ -1,4 +1,6 @@
-const darwin = process.platform === 'darwin'
+import platform from './platform'
+
+const darwin = platform === 'darwin'
 
 const alias = (key) => {
   switch (key) {
