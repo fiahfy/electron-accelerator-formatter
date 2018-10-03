@@ -20,14 +20,20 @@ describe('platform on browser', () => {
   })
 
   test('should work on darwin', () => {
-    Object.defineProperty(window.navigator, 'platform', { value: 'MacIntel', configurable: true })
+    Object.defineProperty(window.navigator, 'platform', {
+      value: 'MacIntel',
+      configurable: true
+    })
     jest.resetModules()
     const platform = require('../src/platform').default
     expect(platform).toBe('darwin')
   })
 
   test('should work on win32', () => {
-    Object.defineProperty(window.navigator, 'platform', { value: 'Win32', configurable: true })
+    Object.defineProperty(window.navigator, 'platform', {
+      value: 'Win32',
+      configurable: true
+    })
     jest.resetModules()
     const platform = require('../src/platform').default
     expect(platform).toBe('win32')

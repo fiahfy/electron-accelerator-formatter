@@ -1,17 +1,16 @@
-// http://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint'
+    ecmaVersion: 2018,
+    sourceType: 'module'
   },
   env: {
-    'jest': true
+    browser: true,
+    node: true,
+    jest: true
   },
   extends: [
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
-  // add your custom rules here
-  rules: {}
+    'eslint:recommended',
+    'plugin:prettier/recommended'
+  ]
 }

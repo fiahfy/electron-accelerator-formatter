@@ -34,13 +34,7 @@ const modifier = (key) => {
   return key
 }
 
-const orders = [
-  'Ctrl',
-  'Alt',
-  'Shift',
-  'Cmd',
-  'Windows'
-]
+const orders = ['Ctrl', 'Alt', 'Shift', 'Cmd', 'Windows']
 
 const sort = (a, b) => {
   a = orders.indexOf(a)
