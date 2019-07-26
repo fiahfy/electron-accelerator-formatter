@@ -2,10 +2,12 @@
 
 > Format [electron accelerator](https://electronjs.org/docs/api/accelerator) according to the platform.
 
+
 ## Installation
 ```
 npm install @fiahfy/electron-accelerator-formatter
 ```
+
 
 ## Usage
 ```js
