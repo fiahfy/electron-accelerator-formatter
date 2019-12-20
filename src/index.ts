@@ -2,7 +2,7 @@ import platform from './platform'
 
 const darwin = platform === 'darwin'
 
-const alias = (key) => {
+const alias = (key: string): string => {
   switch (key) {
     case 'CommandOrControl':
       return 'CmdOrCtrl'
@@ -18,7 +18,7 @@ const alias = (key) => {
   }
 }
 
-const modifier = (key) => {
+const modifier = (key: string): string => {
   if (key === 'Super') {
     key = darwin ? 'Cmd' : 'Windows'
   }
@@ -34,14 +34,14 @@ const modifier = (key) => {
   return key
 }
 
-const orders = ['Ctrl', 'Alt', 'Shift', 'Cmd', 'Windows']
+const keyOrders = ['Ctrl', 'Alt', 'Shift', 'Cmd', 'Windows']
 
-const sort = (a, b) => {
-  a = orders.indexOf(a)
-  b = orders.indexOf(b)
-  a = a === -1 ? Infinity : a
-  b = b === -1 ? Infinity : b
-  if (a > b) {
+const sortKey = (a: string, b: string): number => {
+  let aIndex = keyOrders.indexOf(a)
+  let bIndex = keyOrders.indexOf(b)
+  aIndex = aIndex === -1 ? Infinity : aIndex
+  bIndex = bIndex === -1 ? Infinity : bIndex
+  if (aIndex > bIndex) {
     return 1
   } else if (a < b) {
     return -1
@@ -51,7 +51,7 @@ const sort = (a, b) => {
 }
 
 // @see https://apple.stackexchange.com/questions/55727/where-can-i-find-the-unicode-symbols-for-mac-functional-keys-command-shift-e
-const format = (key) => {
+const formatKey = (key: string): string => {
   switch (key) {
     case 'Ctrl':
       return darwin ? '⌃' : key
@@ -108,14 +108,14 @@ const format = (key) => {
   }
 }
 
-export default (accelerator) => {
+export const format = (accelerator: string): string => {
   return accelerator
     .split('+')
     .map(alias)
     .map(modifier)
     .filter((element) => !!element)
     .filter((element, index, array) => array.indexOf(element) === index)
-    .sort(sort)
-    .map(format)
+    .sort(sortKey)
+    .map(formatKey)
     .join(darwin ? '' : '+')
 }

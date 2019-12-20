@@ -1,4 +1,4 @@
-export default (() => {
+export default ((): string => {
   if (typeof process !== 'undefined') {
     return process.platform
   } else {

@@ -15,11 +15,8 @@ describe('platform on nodejs', () => {
 })
 
 describe('platform on browser', () => {
-  beforeAll(() => {
-    global.process = undefined
-  })
-
   test('should work on darwin', () => {
+    Object.defineProperty(global, 'process', { value: undefined })
     Object.defineProperty(window.navigator, 'platform', {
       value: 'MacIntel',
       configurable: true
@@ -30,6 +27,7 @@ describe('platform on browser', () => {
   })
 
   test('should work on win32', () => {
+    Object.defineProperty(global, 'process', { value: undefined })
     Object.defineProperty(window.navigator, 'platform', {
       value: 'Win32',
       configurable: true

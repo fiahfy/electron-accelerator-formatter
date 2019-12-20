@@ -1,10 +1,12 @@
-let format
+import { format as origin } from '../src'
+
+let format: typeof origin
 
 describe('format on darwin', () => {
   beforeAll(() => {
     jest.resetModules()
     jest.mock('../src/platform', () => 'darwin')
-    format = require('../src').default
+    format = require('../src').format
   })
 
   test('single key should be formatted correctly', () => {
@@ -45,7 +47,7 @@ describe('format on win32', () => {
   beforeAll(() => {
     jest.resetModules()
     jest.mock('../src/platform', () => 'win32')
-    format = require('../src').default
+    format = require('../src').format
   })
 
   test('single key should be formatted correctly', () => {

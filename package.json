@@ -11,17 +11,20 @@
     "url": "https://github.com/fiahfy/electron-accelerator-formatter/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-core": "^7.0.0-0",
-    "babel-jest": "^24.8.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "jest": "^24.8.0",
-    "prettier": "^1.14.3",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel": "^4.0.3"
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  },
+  "engines": {
+    "node": ">=8"
   },
   "files": [
     "dist"
@@ -34,7 +37,6 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "publishConfig": {
     "access": "public"
   },
@@ -43,11 +45,10 @@
     "url": "git+https://github.com/fiahfy/electron-accelerator-formatter.git"
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "lint": "eslint -f codeframe --ignore-path .gitignore .",
-    "prepare": "npm run test && npm run build",
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint -f codeframe --ext .ts --ignore-path .gitignore .",
     "test": "npm run lint && jest"
   },
-  "unpkg": "dist/index.umd.js"
+  "types": "dist/index.d.js"
 }
