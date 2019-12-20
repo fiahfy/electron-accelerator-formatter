@@ -14,8 +14,7 @@ jobs:
         with:
           node-version: 12
       - run: yarn
-      - run: sudo apt-get install xvfb
-      - run: xvfb-run yarn test
+      - run: yarn test
 
   publish:
     needs: build
