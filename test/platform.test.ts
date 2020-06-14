@@ -2,14 +2,14 @@ describe('platform on nodejs', () => {
   test('should work on darwin', () => {
     Object.defineProperty(process, 'platform', { value: 'darwin' })
     jest.resetModules()
-    const platform = require('../src/platform').default
+    const platform = require('../src/platform').default // eslint-disable-line @typescript-eslint/no-var-requires
     expect(platform).toBe('darwin')
   })
 
   test('should work on win32', () => {
     Object.defineProperty(process, 'platform', { value: 'win32' })
     jest.resetModules()
-    const platform = require('../src/platform').default
+    const platform = require('../src/platform').default // eslint-disable-line @typescript-eslint/no-var-requires
     expect(platform).toBe('win32')
   })
 })
@@ -19,10 +19,10 @@ describe('platform on browser', () => {
     Object.defineProperty(global, 'process', { value: undefined })
     Object.defineProperty(window.navigator, 'platform', {
       value: 'MacIntel',
-      configurable: true
+      configurable: true,
     })
     jest.resetModules()
-    const platform = require('../src/platform').default
+    const platform = require('../src/platform').default // eslint-disable-line @typescript-eslint/no-var-requires
     expect(platform).toBe('darwin')
   })
 
@@ -30,10 +30,10 @@ describe('platform on browser', () => {
     Object.defineProperty(global, 'process', { value: undefined })
     Object.defineProperty(window.navigator, 'platform', {
       value: 'Win32',
-      configurable: true
+      configurable: true,
     })
     jest.resetModules()
-    const platform = require('../src/platform').default
+    const platform = require('../src/platform').default // eslint-disable-line @typescript-eslint/no-var-requires
     expect(platform).toBe('win32')
   })
 })

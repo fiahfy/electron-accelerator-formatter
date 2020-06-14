@@ -6,7 +6,7 @@ describe('format on darwin', () => {
   beforeAll(() => {
     jest.resetModules()
     jest.mock('../src/platform', () => 'darwin')
-    format = require('../src').format
+    format = require('../src').format // eslint-disable-line @typescript-eslint/no-var-requires
   })
 
   test('single key should be formatted correctly', () => {
@@ -47,7 +47,7 @@ describe('format on win32', () => {
   beforeAll(() => {
     jest.resetModules()
     jest.mock('../src/platform', () => 'win32')
-    format = require('../src').format
+    format = require('../src').format // eslint-disable-line @typescript-eslint/no-var-requires
   })
 
   test('single key should be formatted correctly', () => {
