@@ -11,17 +11,17 @@
     "url": "https://github.com/fiahfy/electron-accelerator-formatter/issues"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.14",
-    "@typescript-eslint/eslint-plugin": "^3.4.0",
-    "@typescript-eslint/parser": "^3.4.0",
-    "eslint": "^7.3.1",
+    "@types/jest": "^26.0.7",
+    "@types/node": "^14.0.26",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.5"
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
   },
   "engines": {
     "node": ">=8"
@@ -47,7 +47,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "lint": "eslint -f codeframe --ext .ts --ignore-path .gitignore .",
+    "lint": "eslint -f codeframe --ext .js,.ts --ignore-path .gitignore .",
     "test": "npm run lint && jest"
   },
   "types": "dist/index.d.js"
